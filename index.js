@@ -5,7 +5,7 @@ const socketio = require("socket.io");
 const http = require("http");
 
 const server = http.createServer(app);
-const socketCors = { cors: { origin: "http://localhost:3000", methods: ["GET", "POST"] } };
+const socketCors = { cors: { origin: "*" } };
 const io = socketio(server, socketCors) || 8080;
 
 const roomRoutes = require("./routes/roomRoutes");
